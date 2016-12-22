@@ -1,0 +1,27 @@
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+int main(int argc, char** argv) {
+    	
+        double x, s;
+    	char *filename;
+    	FILE *fd;
+    	
+        
+        x=pow((3.14/45),2);
+        s=sin(x);
+
+    	filename = (char*)malloc(sizeof(char)*strlen(argv[1]));
+    	strcpy(filename,argv[1]);
+    	fd = fopen(filename,"w");
+    	if (fd == NULL) {
+            	printf("File can not be created\n");
+            	exit(-1);
+    	}
+    	fprintf(fd,"%lf",s);
+    	fclose(fd);
+}
