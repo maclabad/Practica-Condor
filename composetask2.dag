@@ -1,0 +1,5 @@
+Job seno sine.condor
+Job coseno coseno.condor
+Job collect collect.condor
+PARENT seno coseno CHILD collect
+Retry collect 3
