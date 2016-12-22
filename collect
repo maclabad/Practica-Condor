@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+main()
+{
+ FILE *fichero1, *fichero2;
+
+
+
+float f1, f2, suma;
+
+
+char lec, lect;
+
+
+char* archivo1="calc_sine.txt";
+char* archivo2="calc_cos.txt";
+
+
+ fichero1= fopen(archivo1,"r");
+ fichero2 = fopen(archivo2,"r");
+
+
+if (fichero1==NULL)
+{
+  printf( "No se pueden abrir los archivos archivos.\n" );
+  exit( 1 );}
+
+
+else{
+fscanf(fichero1, "%[^\n]", &lec);
+f1= atof(&lec);
+printf("resultado1: %f\n",f1);
+
+
+}
+
+
+if (fichero2==NULL)
+
+
+{
+  printf( "No se pueden abrir los archivos archivos.\n" );
+  exit( 1 );}
+else{
+fscanf(fichero2, "%[^\n]", &lect);
+f2= atof(&lect);
+printf("resultado2: %f\n",f2);
+fclose(fichero2);}
+
+
+ suma=f1+f2;
+
+
+ printf("la suma es: %f",suma);
+  if ((fclose(fichero1)!= 0) && (fclose(fichero2)!= 0))
+
+
+  printf( "Problemas al cerrar el fichero\n" );
+}
