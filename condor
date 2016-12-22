@@ -1,0 +1,18 @@
+executable = /usr/bin/wc
+arguments = -l
+input = cuento2.txt
+output = numlinescuento.txt
+error = err.$(cluster).$(process)
+log = log.$(cluster).$(process)
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+requirements= UidDomain == "cloud.univalle.edu.co"
+queue
+
+arguments= -w
+output=numpalabrascuento.txt
+queue
+
+arguments= -c
+output=numcaractercuento.txt
+queue
